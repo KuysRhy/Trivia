@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, Trivia</title>
+</head>
+<style>
+#title {
+  text-align: center;
+  font-family: monospace;
+}
+
+#start {
+  text-align: center;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+#reset {
+  text-align: center;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+#scores {
+  font-family: monospace;
+}
+</style>
+<body id="body">
+  <h1 id="title">My Trivia Website</h1>
+  <p id="start">Start Now</p>
+  <p id="reset">Restore Default</p>
+  <br><br>
+  <p id="scores">Recent Score:<input disabled="" id="Hscore" placeholder="Your Score"></p>
+</body>
+  <script>
+document.getElementById("title").onclick = function(){
+  alert("This is a Easter Egg");
+  document.getElementById("Hscore").value = "9999";
+  document.getElementById("body").style.backgroundColor = "gold";
+}
+
+document.getElementById("reset").onclick = function(){
+  document.getElementById("body").style.backgroundColor = "white";
+  document.getElementById("Hscore").value = '';
+}
+
+  document.getElementById("start").onclick = function (){
+    alert("Capital Letter Only");
+    
+    var Q1 = 'What is the meaning of symbol π';
+    var $Q1 = prompt(Q1) ;
+    
+    if ($Q1 == 'PI'){
+      
+      alert("You Are Correct");
+      
+      var $Q2 = prompt("What Color is Tomato?");
+      
+      if ($Q2 == 'RED'){
+        alert("You Are Correct!");
+        
+        var $Q3 = prompt("Largest Planet in Solar System")
+        
+        if ($Q3 == "JUPITER") {
+          alert("You are Correct!");
+          
+          var $Q4 = prompt("This is called RED PLANET");
+          
+          if ($Q4 == 'MARS') {
+            alert("You are Correct!");
+            
+          }else {
+            alert("WRONG!");
+            document.getElementById("Hscore").value = "0003";
+          }
+        }else {
+          alert("WRONG!") ;
+          document.getElementById("Hscore").value = "0002";
+        }
+      }else {
+        alert("WRONG!");
+        document.getElementById("Hscore").value = "0001";
+      }
+    }else {
+      alert("WRONG!") ;
+      document.getElementById("Hscore").value = "0000" ;
+    }
+  }
+  </script>
+</html>
